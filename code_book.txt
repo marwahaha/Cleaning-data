@@ -1,0 +1,179 @@
+Original data containes following measures and calculations(file features_info.txt):
+
+#Feature Selection 
+#=================
+
+#The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+#Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+#Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+#These signals were used to estimate variables of the feature vector for each pattern:  
+#'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+#tGravityAcc-XYZ
+#tBodyAccJerk-XYZ
+#tBodyGyro-XYZ
+#tBodyGyroJerk-XYZ
+#tBodyAccMag
+#tGravityAccMag
+#tBodyAccJerkMag
+#tBodyGyroMag
+#tBodyGyroJerkMag
+#fBodyAcc-XYZ
+#fBodyAccJerk-XYZ
+#fBodyGyro-XYZ
+#fBodyAccMag
+#fBodyAccJerkMag
+#fBodyGyroMag
+#fBodyGyroJerkMag
+
+For these 33 signals in the original data set were estimated maltiple variables.
+In our data set we only consider mean and standart deviation.
+
+New data set provides averages of all measurements by type of activity 
+and by subject who performed the activity 
+replacing abbreviations in variable names leads to the following list of variables: 
+
+[1] "activity"
+	factor with 6 levels "WALKING
+", "WALKING_UPSTAIRS"
+, "WALKING_DOWNSTAIRS"
+, "SITTING", "STANDING"
+, "LAYING"
+)
+[2] "subject"
+	factor with 30 levels "1" through "30"
+[3] "average mean of time body acceleration x"   
+	numeric, normalized and bounded within [-1,1]                           
+[4] "average mean of time body acceleration y"  
+	numeric, normalized and bounded within [-1,1]                                    
+[5] "average mean of time body acceleration z"  
+	numeric, normalized and bounded within [-1,1]                                
+[6] "average mean of time gravity acceleration x"  
+	numeric, normalized and bounded within [-1,1]                             
+[7] "average mean of time gravity acceleration y"  
+	numeric, normalized and bounded within [-1,1]                             
+[8] "average mean of time gravity acceleration z"   
+	numeric, normalized and bounded within [-1,1]                            
+[9] "average mean of time body acceleration jerk x"   
+	numeric, normalized and bounded within [-1,1]                          
+[10] "average mean of time body acceleration jerk y"   
+	numeric, normalized and bounded within [-1,1]                          
+[11] "average mean of time body acceleration jerk z"   
+	numeric, normalized and bounded within [-1,1]                          
+[12] "average mean of time body gyroscope x"      
+	numeric, normalized and bounded within [-1,1]                               
+[13] "average mean of time body gyroscope y"    
+	numeric, normalized and bounded within [-1,1]                                
+[14] "average mean of time body gyroscope z"   
+	numeric, normalized and bounded within [-1,1]                                  
+[15] "average mean of time body gyroscope jerk x"   
+	numeric, normalized and bounded within [-1,1]                            
+[16] "average mean of time body gyroscope jerk y"    
+	numeric, normalized and bounded within [-1,1]                            
+[17] "average mean of time body gyroscope jerk z"   
+	numeric, normalized and bounded within [-1,1]                             
+[18] "average mean of time body acceleration magnitude"   
+	numeric, normalized and bounded within [-1,1]                      
+[19] "average mean of time gravity acceleration magnitude"   
+	numeric, normalized and bounded within [-1,1]                    
+[20] "average mean of time body acceleration jerk magnitude"    
+	numeric, normalized and bounded within [-1,1]                
+[21] "average mean of time body gyroscope magnitude"       
+	numeric, normalized and bounded within [-1,1]                      
+[22] "average mean of time body gyroscope jerk magnitude"   
+	numeric, normalized and bounded within [-1,1]                     
+[23] "average mean of frequency body acceleration x"    
+	numeric, normalized and bounded within [-1,1]                         
+[24] "average mean of frequency body acceleration y"    
+	numeric, normalized and bounded within [-1,1]                        
+[25] "average mean of frequency body acceleration z"    
+	numeric, normalized and bounded within [-1,1]                         
+[26] "average mean of frequency body acceleration jerk x"   
+	numeric, normalized and bounded within [-1,1]                     
+[27] "average mean of frequency body acceleration jerk y"   
+	numeric, normalized and bounded within [-1,1]                    
+[28] "average mean of frequency body acceleration jerk z"    
+	numeric, normalized and bounded within [-1,1]                    
+[29] "average mean of frequency body gyroscope x"       
+	numeric, normalized and bounded within [-1,1]                         
+[30] "average mean of frequency body gyroscope y"       
+	numeric, normalized and bounded within [-1,1]                        
+[31] "average mean of frequency body gyroscope z"   
+	numeric, normalized and bounded within [-1,1]                             
+[32] "average mean of frequency body acceleration magnitude"    
+	numeric, normalized and bounded within [-1,1]                 
+[33] "average mean of frequency body acceleration jerk magnitude"   
+	numeric, normalized and bounded within [-1,1]             
+[34] "average mean of frequency body gyroscope magnitude"        
+	numeric, normalized and bounded within [-1,1]                
+[35] "average mean of frequency body gyroscope jerk magnitude"    
+	numeric, normalized and bounded within [-1,1]              
+[36] "average standart deviation of time body acceleration x"   
+	numeric, normalized and bounded within [-1,1]                 
+[37] "average standart deviation of time body acceleration y"  
+	numeric, normalized and bounded within [-1,1]                  
+[38] "average standart deviation of time body acceleration z"    
+	numeric, normalized and bounded within [-1,1]                
+[39] "average standart deviation of time gravity acceleration x"  
+	numeric, normalized and bounded within [-1,1]               
+[40] "average standart deviation of time gravity acceleration y"   
+	numeric, normalized and bounded within [-1,1]              
+[41] "average standart deviation of time gravity acceleration z"   
+	numeric, normalized and bounded within [-1,1]             
+[42] "average standart deviation of time body acceleration jerk x"   
+	numeric, normalized and bounded within [-1,1]            
+[43] "average standart deviation of time body acceleration jerk y"   
+	numeric, normalized and bounded within [-1,1]            
+[44] "average standart deviation of time body acceleration jerk z"   
+	numeric, normalized and bounded within [-1,1]           
+[45] "average standart deviation of time body gyroscope x"      
+	numeric, normalized and bounded within [-1,1]                 
+[46] "average standart deviation of time body gyroscope y"   
+	numeric, normalized and bounded within [-1,1]                    
+[47] "average standart deviation of time body gyroscope z"    
+	numeric, normalized and bounded within [-1,1]                   
+[48] "average standart deviation of time body gyroscope jerk x"   
+	numeric, normalized and bounded within [-1,1]               
+[49] "average standart deviation of time body gyroscope jerk y"   
+	numeric, normalized and bounded within [-1,1]               
+[50] "average standart deviation of time body gyroscope jerk z"   
+	numeric, normalized and bounded within [-1,1]               
+[51] "average standart deviation of time body acceleration magnitude"    
+	numeric, normalized and bounded within [-1,1]        
+[52] "average standart deviation of time gravity acceleration magnitude"    
+	numeric , normalized and bounded within [-1,1]    
+[53] "average standart deviation of time body acceleration jerk magnitude"   
+	numeric, normalized and bounded within [-1,1]   
+[54] "average standart deviation of time body gyroscope magnitude"    
+	numeric, normalized and bounded within [-1,1]           
+[55] "average standart deviation of time body gyroscope jerk magnitude"   
+	numeric, normalized and bounded within [-1,1]       
+[56] "average standart deviation of frequency body acceleration x"   
+	numeric, normalized and bounded within [-1,1]            
+[57] "average standart deviation of frequency body acceleration y"    
+	numeric, normalized and bounded within [-1,1]           
+[58] "average standart deviation of frequency body acceleration z"    
+	numeric, normalized and bounded within [-1,1]           
+[59] "average standart deviation of frequency body acceleration jerk x"   
+	numeric , normalized and bounded within [-1,1]      
+[60] "average standart deviation of frequency body acceleration jerk y"   
+	numeric, normalized and bounded within [-1,1]       
+[61] "average standart deviation of frequency body acceleration jerk z"    
+	numeric, normalized and bounded within [-1,1]     
+[62] "average standart deviation of frequency body gyroscope x"     
+	numeric, normalized and bounded within [-1,1]             
+[63] "average standart deviation of frequency body gyroscope y"      
+	numeric, normalized and bounded within [-1,1]            
+[64] "average standart deviation of frequency body gyroscope z"    
+	numeric, normalized and bounded within [-1,1]              
+[65] "average standart deviation of frequency body acceleration magnitude"   
+	numeric, normalized and bounded within [-1,1]    
+[66] "average standart deviation of frequency body acceleration jerk magnitude"  
+	numeric, normalized and bounded within [-1,1]
+[67] "average standart deviation of frequency body gyroscope magnitude"      
+	numeric, normalized and bounded within [-1,1]    
+[68] "average standart deviation of frequency body gyroscope jerk magnitude"   
+	numeric, normalized and bounded within [-1,1]  
