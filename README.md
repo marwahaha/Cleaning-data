@@ -23,7 +23,7 @@ The script works as follows:
     replaces activity codes with activity names
     labled data set is stored in allData data frame
 4. extracts only mean ans standart deviation variables
-5. function tidy_names() replaces abreviated variable names with descriptive variable names
+5. function tidy_names() replaces abbreviated variable names with descriptive variable names
 6. creates new data frame with averages of variables of tidy data set grouped by activity and subject
 7. adds word "average" to the variable names in the new data set
 8. returns new data set
